@@ -189,36 +189,36 @@ window.onload = function(){
         $(".menu").velocity("fadeIn");
     }
     $("#p3-first-point").on("click",function(){
-        popMenu("第三排电动折叠座椅","/public/image/p3-first.png"); 
+        popMenu("第三排电动折叠座椅","/ford/public/image/p3-first.png"); 
     });
     $("#p3-second-point").on("click",function(){
-        popMenu("带有HFL的后排三区空调系统","/public/image/p3-third.png");
+        popMenu("带有HFL的后排三区空调系统","/ford/public/image/p3-third.png");
     });
     $("#p3-third-point").on("click",function(){
-        popMenu("智能前转系统提供更好的机动性","/public/image/p3-second.png");
+        popMenu("智能前转系统提供更好的机动性","/ford/public/image/p3-second.png");
     });
     $("#p4-first-point").on("click",function(){
-        popMenu("带“放闪烁”功能的自动高亮LED灯","/public/image/p4-first.png");
+        popMenu("带“放闪烁”功能的自动高亮LED灯","/ford/public/image/p4-first.png");
     });
     $("#p4-second-point").on("click",function(){
-        popMenu("360度全景影像可视系统","/public/image/p4-second.png");
+        popMenu("360度全景影像可视系统","/ford/public/image/p4-second.png");
     });
     $("#p4-third-point").on("click",function(){
-        popMenu("自动泊车系统让您泊车毫无压力","/public/image/p4-third.png");
+        popMenu("自动泊车系统让您泊车毫无压力","/ford/public/image/p4-third.png");
     });
     $("#p6-first-point").on("click",function(){
-        popMenu("高质量的收工，奢华的用料和成品制作,柔软的手感接触，双色调设计形成了精致，高端的内饰设计","/public/image/p6-first.png");
+        popMenu("高质量的收工，奢华的用料和成品制作,柔软的手感接触，双色调设计形成了精致，高端的内饰设计","/ford/public/image/p6-first.png");
     });
     $("#p6-second-point").on("click",function(){
-        popMenu("完美亲近大自然的全新超大尺寸全景天窗","/public/image/p6-second.png");
+        popMenu("完美亲近大自然的全新超大尺寸全景天窗","/ford/public/image/p6-second.png");
     });
     $("#p8-first-point").on("click",function(){
-        popMenu("盲区监视系统","/public/image/p8-first.png");
+        popMenu("盲区监视系统","/ford/public/image/p8-first.png");
     });
     $("#p8-second-point").on("click",function(){
-        popMenu("车道保持功能、自适应巡航功能和低速行车安全系统","/public/image/p8-second.png");
+        popMenu("车道保持功能、自适应巡航功能和低速行车安全系统","/ford/public/image/p8-second.png");
     });
     $("#p10-first-point").on("click",function(){
-        popMenu("同级领先的动力表现全新EcoBoost 2.7升 GTDi双涡轮发动机带给您无与伦比的驾驶快感","/public/image/p10-first.png");
+        popMenu("同级领先的动力表现全新EcoBoost 2.7升 GTDi双涡轮发动机带给您无与伦比的驾驶快感","/ford/public/image/p10-first.png");
     });
 }
