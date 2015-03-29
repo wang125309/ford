@@ -37,6 +37,12 @@ window.onload = function(){
         "left":w/320*290,
         "bottom":w/320*140
     });
+    $(".p8-car").css({
+        "height":w/320*228
+    });
+    $(".p8-car-outer").css({
+        "height":w/320*228
+    });
     $("#p10-first-point").css({
         "right":w/320*54,
         "bottom":w/320*228
@@ -147,6 +153,10 @@ window.onload = function(){
                     $(".p8-text").removeClass("base");
                     $(".p8-text").addClass("base-infinite-fly");
                     $(".p8-text").addClass("fly");
+                },1500);
+                $(".p8-car-outer").addClass("car-left");
+                setTimeout(function(){
+                    $(".p8-car").addClass("car-fade-in");
                 },1500);
             }
             else if(swiper.activeIndex == 8) {

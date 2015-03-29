@@ -20,6 +20,22 @@
     -webkit-transform:rotate(360deg);
   }
 }
+@-webkit-keyframes car-left {
+  0% {
+    -webkit-transform:translateX(-100vw);
+  }
+  100% {
+    -webkit-transform:translateX(0);
+  }
+}
+@-webkit-keyframes car-fade-in {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
 .music {
   background:url("/ford/public/image/music.png") no-repeat;
   background-size:100% auto;
@@ -38,7 +54,14 @@
   position:absolute;
   right:3vw;
 }
-
+@-webkit-keyframes next {
+  0% {
+    transform:scale(0);
+  }
+  100% {
+    transform:scale(1);
+  }
+}
 @-webkit-keyframes scole {
   0%,75% {
     -webkit-transform:scale(1);
@@ -299,6 +322,10 @@ body {
       -moz-animation-name:textup-p10-2;
       animation-name:textup-p10-2;
     }
+    .next {
+      -webkit-animation-name:next;
+      animation-name:next;
+    }
     .fly {
       -webkit-animation-name:fly;
       animation-name:fly;
@@ -353,11 +380,18 @@ body {
       animation-timing-function: ease;
       animation-fill-mode: both;
     }
+    .car-left {
+      -webkit-animation-name:car-left;
+    }
+    .car-fade-in {
+      -webkit-animation-name:car-fade-in;
+    }
     .swiper-wrapper {
       section {
         background-position:center bottom !important;
       }
       .page {
+
         .left-logo {
           background:url("/ford/public/image/left-logo.png") no-repeat;
           background-size:100% auto;
@@ -390,6 +424,7 @@ body {
         position:absolute;
         width:5%;
         height:5vw;
+        z-index:1000;
         background-size:100% auto !important;
         background-position:center;
         background:url('/ford/public/image/circle.png') no-repeat;
@@ -486,6 +521,7 @@ body {
           background-position:center top;
           bottom:15%;
         }
+
       }
       .page8 {
         .p8-text {
@@ -497,6 +533,22 @@ body {
           height:20%;
           background-position:center top;
           top:15%;
+        }
+        .p8-car-outer {
+          -webkit-transform:translateX(-100vw);
+          position:absolute;
+          background:url("/ford/public/image/p8-car-outer.png") no-repeat;
+          background-size:100% auto;
+          width:100%;
+          bottom:0;
+        }
+        .p8-car {
+          opacity:0;
+          position:absolute;
+          background:url("/ford/public/image/p8-car.png") no-repeat;
+          background-size:100% auto;
+          width:100%;
+          bottom:0;
         }
       }
       .page9 {
