@@ -1616,6 +1616,7 @@ require("../../bower_components/zepto/zepto.js");
 require("../../bower_components/velocity/velocity.min.js");
 require("../../bower_components/swiper/dist/js/swiper.min.js");
 window.onload = function(){
+    $("#loading").velocity("fadeOut");
     w = window.screen.width;
     h = window.screen.height;
     $(".page1 .light").css({
@@ -1807,9 +1808,17 @@ window.onload = function(){
     var popMenu = function(text,url) {
         $(".menu > .title > .text").text(text);
         $(".menu > .background").css({
-            "background":"url('"+url+"')",
-            "background-size":"cover"
+            "background":"url('/ford/public/image/ajax-loader.gif') no-repeat #fff",
+            "background-position":"center",
+            "background-size":"auto"
         });
+        $.get(url,function(data){
+            $(".menu > .background").css({
+                "background":"url('"+url+"')",
+                "background-size":"cover"
+            });
+        });
+
         $(".menu").velocity("fadeIn");
     }
     $("#p3-first-point").on("click",function(){

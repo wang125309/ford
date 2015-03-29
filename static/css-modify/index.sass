@@ -12,6 +12,19 @@
   height:1%;
   display:block;
 }
+#loading {
+  background:url("/ford/public/image/299.gif") no-repeat;
+  background-color:rgba(0,0,0,0.8);
+  background-position:center;
+  background-size:auto;
+  position:absolute;
+  width:100%;
+  height:100%;
+  z-index:100000;
+
+}
+
+
 @-webkit-keyframes ratote {
   0% {
     -webkit-transform:rotate(0deg);
@@ -227,6 +240,10 @@ body {
       height:75%;
       width:100%;
       border-bottom:1px solid #dcdcdc;
+      background:url("/public/image/ajax-loader.gif") no-repeat;
+      background-position:center;
+      background-size:auto;
+      background-color:#fff;
     }
     .title {
       background:#fff;
@@ -584,7 +601,7 @@ body {
           background-position:center top;
           bottom:10%;
         }
-        
+
       }
     }
   }
