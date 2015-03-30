@@ -3,12 +3,30 @@ require("../../bower_components/velocity/velocity.min.js");
 require("../../bower_components/swiper/dist/js/swiper.min.js");
 window.onload = function(){
     $("#loading").velocity("fadeOut");
-    w = window.screen.width;
-    h = window.screen.height;
+    w = $(window).width();
+    h = $(window).height();
     $(".page1 .light").css({
         "height":w/320*152+"px",
         "margin-bottom":w/480*337.5+"px",
     });
+    first_b = w/320*64;
+                second_b = w/320*142;
+                third_b = w/320*220;
+                first_l = w/320*74;
+                second_l = w/320*256;
+                third_l = w/320*5;
+                $("#p3-first-point").css({
+                    "bottom":first_b+"px",
+                    "left":first_l+"px"
+                });
+                $("#p3-second-point").css({
+                    "bottom":second_b+"px",
+                    "left":second_l+"px"
+                });
+                $("#p3-third-point").css({
+                    "bottom":third_b+"px",
+                    "right":third_l+"px"
+                });
 
     $("#p4-first-point").css({
         "left":w/320*30,
@@ -92,24 +110,7 @@ window.onload = function(){
                     $(".p3-text").addClass("base-infinite-fly");
                     $(".p3-text").addClass("fly");
                 },1500);
-                first_b = w/320*64;
-                second_b = w/320*90;
-                third_b = w/320*220;
-                first_l = w/320*74;
-                second_l = w/320*192;
-                third_l = w/320*5;
-                $("#p3-first-point").css({
-                    "bottom":first_b+"px",
-                    "left":first_l+"px"
-                });
-                $("#p3-second-point").css({
-                    "bottom":second_b+"px",
-                    "left":second_l+"px"
-                });
-                $("#p3-third-point").css({
-                    "bottom":third_b+"px",
-                    "right":third_l+"px"
-                });
+
             }
             else if(swiper.activeIndex == 3) {
                 $(".p4-text").removeClass("textup-p4");
@@ -158,7 +159,9 @@ window.onload = function(){
                 $(".p8-car-outer").addClass("car-left");
                 setTimeout(function(){
                     $(".p8-car").addClass("car-fade-in");
+                    $(".p8-car-outer").velocity("fadeOut");
                 },1500);
+
             }
             else if(swiper.activeIndex == 8) {
                 $(".p9-text").removeClass("textup-p9");
@@ -190,8 +193,10 @@ window.onload = function(){
     });
     $(".close").bind("click",function(){
         $(".menu").velocity("fadeOut");
+        $(".menu-background").velocity("fadeOut");
     });
     var popMenu = function(text,url) {
+        $(".menu-background").velocity("fadeIn");
         $(".menu > .title > .text").text(text);
         $(".menu > .background").css({
             "background":"url('/ford/public/image/ajax-loader.gif') no-repeat #fff",
@@ -208,36 +213,46 @@ window.onload = function(){
         $(".menu").velocity("fadeIn");
     }
     $("#p3-first-point").on("click",function(){
+        $(".title .text").css("line-height","17.25vw");
         popMenu("第三排电动折叠座椅","/ford/public/image/p3-first.png"); 
     });
     $("#p3-second-point").on("click",function(){
+        $(".title .text").css("line-height","17.25vw");
         popMenu("带有HFL的后排三区空调系统","/ford/public/image/p3-third.png");
     });
     $("#p3-third-point").on("click",function(){
+        $(".title .text").css("line-height","17.25vw");
         popMenu("智能前转系统提供更好的机动性","/ford/public/image/p3-second.png");
     });
     $("#p4-first-point").on("click",function(){
+        $(".title .text").css("line-height","17.25vw");
         popMenu("带“放闪烁”功能的自动高亮LED灯","/ford/public/image/p4-first.png");
     });
     $("#p4-second-point").on("click",function(){
+        $(".title .text").css("line-height","17.25vw");
         popMenu("360度全景影像可视系统","/ford/public/image/p4-second.png");
     });
     $("#p4-third-point").on("click",function(){
+        $(".title .text").css("line-height","17.25vw");
         popMenu("自动泊车系统让您泊车毫无压力","/ford/public/image/p4-third.png");
     });
     $("#p6-first-point").on("click",function(){
-        popMenu("高质量的收工，奢华的用料和成品制作,柔软的手感接触，双色调设计形成了精致，高端的内饰设计","/ford/public/image/p6-first.png");
+        popMenu("完美亲近大自然的全新超大尺寸全景天窗","/ford/public/image/p6-first.png");
     });
     $("#p6-second-point").on("click",function(){
-        popMenu("完美亲近大自然的全新超大尺寸全景天窗","/ford/public/image/p6-second.png");
+        $(".title .text").css({"line-height":"17.25vw","font-size":"3.8vw"});
+        popMenu("高质量的收工，奢华的用料和成品制作,柔软的手感接触，双色调设计形成了精致，高端的内饰设计","/ford/public/image/p6-second.png");
     });
     $("#p8-first-point").on("click",function(){
+        $(".title .text").css("line-height","17.25vw");
         popMenu("盲区监视系统","/ford/public/image/p8-first.png");
     });
     $("#p8-second-point").on("click",function(){
+        $(".title .text").css("line-height","8.625vw");
         popMenu("车道保持功能、自适应巡航功能和低速行车安全系统","/ford/public/image/p8-second.png");
     });
     $("#p10-first-point").on("click",function(){
+        $(".title .text").css("line-height","initial");
         popMenu("同级领先的动力表现全新EcoBoost 2.7升 GTDi双涡轮发动机带给您无与伦比的驾驶快感","/ford/public/image/p10-first.png");
     });
 }
