@@ -77,10 +77,10 @@
 }
 @-webkit-keyframes next {
   0% {
-    transform:scale(0);
+    transform:translateX(-100vw);
   }
   100% {
-    transform:scale(1);
+    transform:translateX(0);
   }
 }
 @-webkit-keyframes scole {
@@ -153,10 +153,10 @@
 }
 @-webkit-keyframes textup-p5 {
   0% {
-    -webkit-transform:scale(0);
+    -webkit-transform:translateX(500px);
   }
   100% {
-    -webkit-transform:scale(1);
+    -webkit-transform:translateX(0);
   }
 }
 @-webkit-keyframes textup-p6 {
@@ -169,10 +169,10 @@
 }
 @-webkit-keyframes textup-p7 {
   0% {
-    -webkit-transform:scale(3);
+    -webkit-transform:translateX(500px);
   }
   100% {
-    -webkit-transform:scale(1);
+    -webkit-transform:translateX(0);
   }
 }
 @-webkit-keyframes textup-p8 {
@@ -234,16 +234,24 @@ body {
   width:100vw;
   box-sizing:border-box;
   -webkit-transition:all .5s;
-  .menu {
+  .star-background {
+    width:100%;
+    top:0;
+    height:34vh;
+    background:url("/ford/public/image/star-background.png") no-repeat;
+    background-size:cover;
+    background-position:center top;
+  }
+ .menu {
     position:absolute;
-    width:96vw;
+    width:94vw;
     height:69vw;
     top:25vh;
     left:0;
     display:none;
     margin:2%;
     z-index:1000;
-    border:1px solid #dcdcdc;
+    border:1vw solid rgba(0,0,0,0.5);
     .background {
       height:75%;
       width:100%;
@@ -266,7 +274,7 @@ body {
       .close {
         width:17.25vw;
         background:url("/ford/public/image/close-icon.png") no-repeat;
-        background-size:50% auto;
+        background-size:33% auto;
         background-position:center;
         height:17.25vw;
         float:right;
@@ -381,11 +389,11 @@ body {
       -moz-backface-visibility: hidden;
       -ms-backface-visibility: hidden;
       backface-visibility: hidden;
-      -webkit-animation-duration: 1s;
+      -webkit-animation-duration: 2s;
       -webkit-animation-timing-function: ease;
       -webkit-animation-iteration-count:infinite;
       -webkit-animation-fill-mode: both;
-      animation-duration: 1s;
+      animation-duration: 2s;
       animation-iteration-count:infinite;
       animation-timing-function: ease;
       animation-animation-iteration-count:infinite;
@@ -455,6 +463,11 @@ body {
         background:url('/ford/public/image/circle.png') no-repeat;
       }
       .page1 {
+        .full-cover {
+          height:100vh;
+          width:100vw;
+          display:none;
+        }
         .light {
           background:url("/ford/public/image/light.png") no-repeat;
           position:absolute;
@@ -560,7 +573,7 @@ body {
           top:15%;
         }
         .p8-car-outer {
-          -webkit-transform:translateX(-100vw);
+          display:none;
           position:absolute;
           background:url("/ford/public/image/p8-car-outer.png") no-repeat;
           background-size:100% auto;

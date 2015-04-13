@@ -1689,11 +1689,12 @@ window.onload = function(){
         onInit: function() {
             $(".p1-text").removeClass("textup-p1");
             $(".p1-text").addClass("textup-p1");
+            $(".light").velocity("fadeIn");
             setTimeout(function(){
                 $(".p1-text").removeClass("base");
                 $(".p1-text").addClass("base-infinite-fly");
                 $(".p1-text").addClass("fly");
-                $(".light").velocity("fadeIn");
+                $(".full-cover").velocity("fadeIn");
             },1500);
         },
         onSlideChangeEnd: function(swiper){
@@ -1770,11 +1771,11 @@ window.onload = function(){
                     $(".p8-text").addClass("base-infinite-fly");
                     $(".p8-text").addClass("fly");
                 },1500);
-                $(".p8-car-outer").addClass("car-left");
+                $(".p8-car-outer").velocity("fadeIn");
                 setTimeout(function(){
                     $(".p8-car").addClass("car-fade-in");
                     $(".p8-car-outer").velocity("fadeOut");
-                },1500);
+                },2000);
 
             }
             else if(swiper.activeIndex == 8) {
