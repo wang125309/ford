@@ -2,6 +2,7 @@ include ./lib/header.jade
     script(language="javascript",src="/ford/static/js/index.min.js")
     link(href="/ford/static/css/index.css",rel="stylesheet",type="text/css")
     body
+        audio#audio(src="/ford/public/image/ford-background.mp3",loop="loop")
         div#loading=""
         div.menu-background
             div.menu
@@ -88,6 +89,6 @@ include ./lib/header.jade
                     div.p10-text.base=""
                     div#p10-first-point.point.base-infinite=""
                     div.left-logo=""
-                    div.up=""
+                    div.go360(style="background:url('/ford/public/image/360btn.png') no-repeat;background-position:center center;background-size:100%;width:30vw;height:11vw;left:35vw;position:absolute;bottom:10vw;")=""
                     div.right-logo=""
                     div.p10-text-bottom.base=""

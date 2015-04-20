@@ -23,7 +23,7 @@ gulp.task('sass',function(){
         .pipe(gulp.dest('./static/css'));
 });
 
-var js_files = ['login','index','bonus','share','weixin'];
+var js_files = ['login','index','fullScene','share','weixin'];
 
 gulp.task('js',function(){
     for (i in js_files) {

@@ -1,10 +1,26 @@
 require("../../bower_components/zepto/zepto.js");
 require("../../bower_components/velocity/velocity.min.js");
 require("../../bower_components/swiper/dist/js/swiper.min.js");
+
 window.onload = function(){
     $("#loading").velocity("fadeOut");
     w = $(window).width();
     h = $(window).height();
+    $("#audio").attr({"src":"/ford/public/image/ford-background.mp3","autoplay":""});
+    on = false;
+    $(".music").on("click",function(){
+        if(on) {
+            on = false;
+            document.getElementById("audio").pause();
+        }
+        else {
+            on = true;
+            document.getElementById("audio").play();
+        }
+    });
+    $(".go360").click(function(){
+        location.href = "/ford/template/fullScene.html";
+    });
     $(".page1 .light").css({
         "height":w/320*152+"px",
         "margin-bottom":w/480*337.5+"px",
@@ -88,6 +104,7 @@ window.onload = function(){
             if(swiper.activeIndex == 0) {
                 $(".p1-text").removeClass("textup-p1");
                 $(".p1-text").addClass("textup-p1");
+
                 setTimeout(function(){
                     $(".p1-text").removeClass("base");
                     $(".p1-text").addClass("base-infinite-fly");
