@@ -1766,23 +1766,38 @@ require("../../bower_components/zeptojs/src/touch.js");
 require("../../bower_components/velocity/velocity.min.js");
 
 window.onload = function() {
+    $("#loading").velocity("fadeOut");
     h = $(window).height();
     w = $(window).width();
     $(".background").css({
-        "background-position":2*h+w/2+"px "+(2*h)+"px"
+        "background-position":1608+w/2+"px "+(2*h)+"px"
     });
     lx = 0;
     ly = 0;
     lz = 0;
-    lx = 2*h-w/2;
+    lx = 1608+w/2;
     var deviceMotionHandler = function(eventData) {
         console.log(eventData);
-        x = Math.round(6*h/360*Math.round(eventData.alpha*10)/10+(2*h-w/2));
+        x = Math.round(6*h/360*Math.round(eventData.alpha*10)/10+(1608+w/2));
         z = Math.round(3*h/180*Math.round(eventData.beta*10)/10+h);
-        y = Math.round(6*h/180*Math.round(eventData.gamma*10)/10+2*h-w/2);
+        y = 0;
+        if(z>643&&z<=1608) {
             $(".background").css({
                 "background-position":x+y+"px "+z+"px"
             });
+        }
+        else if(z<643){
+            $(".background").css({
+                "background-position":x+y+"px "+643+"px"
+            });
+        
+        }
+        else if(z>1608){
+            $(".background").css({
+                "background-position":x+y+"px "+1608+"px"
+            });
+        
+        }
     };
     var u = navigator.userAgent;
     if (u.indexOf('iPhone') > -1) {
@@ -1797,7 +1812,7 @@ window.onload = function() {
     else {
     x = 0;
     y = 0;
-    mx = 2*h-w/2;
+    mx = 1608+w/2;
     my = 2*h;
         $(".move").addClass("move-android");
         $(".move-text").html("清扫观赏全景");
@@ -1819,34 +1834,33 @@ window.onload = function() {
         console.log(e.touches[0]);
         e.preventDefault();
         setTimeout(function(){
-            mx += e.touches[0].clientX - x;
+            mx += e.touches[0].clientX - x-2;
             x = e.touches[0].clientX;
-            my += e.touches[0].clientY-y;
+            my += e.touches[0].clientY-y-2;
             y = e.touches[0].clientY;
-            $(".background").css({
+            if(my>643&&my<1608) {
+                $(".background").css({
                 "background-position":mx+"px "+my+"px"
-            });
+                });
+            }
+            else if(my<643){
+            
+                $(".background").css({
+                "background-position":mx+"px "+643+"px"
+                });
+            }
+            else if(my>1608) {
+                $(".background").css({
+                "background-position":mx+"px "+1608+"px"
+                });
+                
+            }
         },5);
     });
     }
 };
 
-},{"../../bower_components/velocity/velocity.min.js":1,"../../bower_components/zepto/zepto.js":2,"../../bower_components/zeptojs/src/touch.js":3}]},{},[4])lse {
-      // normalize array if an array of nodes is given
-      if (isArray(selector)) dom = compact(selector)
-      // Wrap DOM nodes.
-      else if (isObject(selector))
-        dom = [selector], selector = null
-      // If it's a html fragment, create nodes from it
-      else if (fragmentRE.test(selector))
-        dom = zepto.fragment(selector.trim(), RegExp.$1, context), selector = null
-      // If there's a context, create a collection on that context first, and select
-      // nodes from there
-      else if (context !== undefined) return $(context).find(selector)
-      // And last but no least, if it's a CSS selector, use it to select nodes.
-      else dom = zepto.qsa(document, selector)
-    }
-    // create a new Zepto collection from the nodes found
+},{"../../bower_components/velocity/velocity.min.js":1,"../../bower_components/zepto/zepto.js":2,"../../bower_components/zeptojs/src/touch.js":3}]},{},[4])o collection from the nodes found
     return zepto.Z(dom, selector)
   }
 
@@ -3399,17 +3413,12 @@ window.onload = function(){
             else if(swiper.activeIndex == 7) {
                 $(".p8-text").removeClass("textup-p8");
                 $(".p8-text").addClass("textup-p8");
+                $(".p8-car").velocity("fadeIn");
                 setTimeout(function(){
                     $(".p8-text").removeClass("base");
                     $(".p8-text").addClass("base-infinite-fly");
                     $(".p8-text").addClass("fly");
                 },1500);
-                $(".p8-car-outer").velocity("fadeIn");
-                setTimeout(function(){
-                    $(".p8-car").addClass("car-fade-in");
-                    $(".p8-car-outer").velocity("fadeOut");
-                },2000);
-
             }
             else if(swiper.activeIndex == 8) {
                 $(".p9-text").removeClass("textup-p9");
@@ -3488,8 +3497,8 @@ window.onload = function(){
         popMenu("完美亲近大自然的全新超大尺寸全景天窗","/ford/public/image/p6-first.png");
     });
     $("#p6-second-point").on("click",function(){
-        $(".title .text").css({"line-height":"17.25vw","font-size":"3.8vw"});
-        popMenu("高质量的收工，奢华的用料和成品制作,柔软的手感接触，双色调设计形成了精致，高端的内饰设计","/ford/public/image/p6-second.png");
+        $(".title .text").css({"line-height":"6.25vw","font-size":"3.8vw"});
+        popMenu("高质量的手工，奢华的用料和成品制作,柔软的手感接触，双色调设计形成了精致，高端的内饰设计","/ford/public/image/p6-second.png");
     });
     $("#p8-first-point").on("click",function(){
         $(".title .text").css("line-height","17.25vw");

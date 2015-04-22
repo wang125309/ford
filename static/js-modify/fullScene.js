@@ -3,23 +3,38 @@ require("../../bower_components/zeptojs/src/touch.js");
 require("../../bower_components/velocity/velocity.min.js");
 
 window.onload = function() {
+    $("#loading").velocity("fadeOut");
     h = $(window).height();
     w = $(window).width();
     $(".background").css({
-        "background-position":2*h+w/2+"px "+(2*h)+"px"
+        "background-position":1608+w/2+"px "+(2*h)+"px"
     });
     lx = 0;
     ly = 0;
     lz = 0;
-    lx = 2*h-w/2;
+    lx = 1608+w/2;
     var deviceMotionHandler = function(eventData) {
         console.log(eventData);
-        x = Math.round(6*h/360*Math.round(eventData.alpha*10)/10+(2*h-w/2));
+        x = Math.round(6*h/360*Math.round(eventData.alpha*10)/10+(1608+w/2));
         z = Math.round(3*h/180*Math.round(eventData.beta*10)/10+h);
-        y = Math.round(6*h/180*Math.round(eventData.gamma*10)/10+2*h-w/2);
+        y = 0;
+        if(z>643&&z<=1608) {
             $(".background").css({
                 "background-position":x+y+"px "+z+"px"
             });
+        }
+        else if(z<643){
+            $(".background").css({
+                "background-position":x+y+"px "+643+"px"
+            });
+        
+        }
+        else if(z>1608){
+            $(".background").css({
+                "background-position":x+y+"px "+1608+"px"
+            });
+        
+        }
     };
     var u = navigator.userAgent;
     if (u.indexOf('iPhone') > -1) {
@@ -34,7 +49,7 @@ window.onload = function() {
     else {
     x = 0;
     y = 0;
-    mx = 2*h-w/2;
+    mx = 1608+w/2;
     my = 2*h;
         $(".move").addClass("move-android");
         $(".move-text").html("清扫观赏全景");
@@ -56,13 +71,27 @@ window.onload = function() {
         console.log(e.touches[0]);
         e.preventDefault();
         setTimeout(function(){
-            mx += e.touches[0].clientX - x;
+            mx += e.touches[0].clientX - x-2;
             x = e.touches[0].clientX;
-            my += e.touches[0].clientY-y;
+            my += e.touches[0].clientY-y-2;
             y = e.touches[0].clientY;
-            $(".background").css({
+            if(my>643&&my<1608) {
+                $(".background").css({
                 "background-position":mx+"px "+my+"px"
-            });
+                });
+            }
+            else if(my<643){
+            
+                $(".background").css({
+                "background-position":mx+"px "+643+"px"
+                });
+            }
+            else if(my>1608) {
+                $(".background").css({
+                "background-position":mx+"px "+1608+"px"
+                });
+                
+            }
         },5);
     });
     }

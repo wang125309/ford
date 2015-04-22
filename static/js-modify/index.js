@@ -169,17 +169,12 @@ window.onload = function(){
             else if(swiper.activeIndex == 7) {
                 $(".p8-text").removeClass("textup-p8");
                 $(".p8-text").addClass("textup-p8");
+                $(".p8-car").velocity("fadeIn");
                 setTimeout(function(){
                     $(".p8-text").removeClass("base");
                     $(".p8-text").addClass("base-infinite-fly");
                     $(".p8-text").addClass("fly");
                 },1500);
-                $(".p8-car-outer").velocity("fadeIn");
-                setTimeout(function(){
-                    $(".p8-car").addClass("car-fade-in");
-                    $(".p8-car-outer").velocity("fadeOut");
-                },2000);
-
             }
             else if(swiper.activeIndex == 8) {
                 $(".p9-text").removeClass("textup-p9");
@@ -258,8 +253,8 @@ window.onload = function(){
         popMenu("完美亲近大自然的全新超大尺寸全景天窗","/ford/public/image/p6-first.png");
     });
     $("#p6-second-point").on("click",function(){
-        $(".title .text").css({"line-height":"17.25vw","font-size":"3.8vw"});
-        popMenu("高质量的收工，奢华的用料和成品制作,柔软的手感接触，双色调设计形成了精致，高端的内饰设计","/ford/public/image/p6-second.png");
+        $(".title .text").css({"line-height":"6.25vw","font-size":"3.8vw"});
+        popMenu("高质量的手工，奢华的用料和成品制作,柔软的手感接触，双色调设计形成了精致，高端的内饰设计","/ford/public/image/p6-second.png");
     });
     $("#p8-first-point").on("click",function(){
         $(".title .text").css("line-height","17.25vw");
