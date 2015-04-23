@@ -1775,12 +1775,21 @@ window.onload = function() {
     lx = 0;
     ly = 0;
     lz = 0;
-    lx = 1608+w/2;
+    count = 0;
     var deviceMotionHandler = function(eventData) {
         console.log(eventData);
-        x = Math.round(6*h/360*Math.round(eventData.alpha*10)/10+(1608+w/2));
+        xm = Math.round(eventData.alpha*10)/10;
+        x = Math.round(6*h/360*xm+(1608+w/2));
+        if(lx > 358&& xm<2) {
+            count ++;
+        }
+        else if(lx < 2&& xm>358) {
+            count --;
+        }
+        lx = xm;
         z = Math.round(3*h/180*Math.round(eventData.beta*10)/10+h);
-        y = 0;
+        y = Math.round(6*h/180*Math.round(eventData.gamma*10)/10);
+        x = count*3216+x;
         if(z>643&&z<=1608) {
             $(".background").css({
                 "background-position":x+y+"px "+z+"px"
@@ -1860,13 +1869,7 @@ window.onload = function() {
     }
 };
 
-},{"../../bower_components/velocity/velocity.min.js":1,"../../bower_components/zepto/zepto.js":2,"../../bower_components/zeptojs/src/touch.js":3}]},{},[4])o collection from the nodes found
-    return zepto.Z(dom, selector)
-  }
-
-  // `$` will be the base `Zepto` object. When calling this
-  // function just call `$.zepto.init, which makes the implementation
-  // details of selecting nodes and creating Zepto collections
+},{"../../bower_components/velocity/velocity.min.js":1,"../../bower_components/zepto/zepto.js":2,"../../bower_components/zeptojs/src/touch.js":3}]},{},[4])d creating Zepto collections
   // patchable in plugins.
   $ = function(selector, context){
     return zepto.init(selector, context)

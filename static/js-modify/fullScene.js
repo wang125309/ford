@@ -12,12 +12,21 @@ window.onload = function() {
     lx = 0;
     ly = 0;
     lz = 0;
-    lx = 1608+w/2;
+    count = 0;
     var deviceMotionHandler = function(eventData) {
         console.log(eventData);
-        x = Math.round(6*h/360*Math.round(eventData.alpha*10)/10+(1608+w/2));
+        xm = Math.round(eventData.alpha*10)/10;
+        x = Math.round(6*h/360*xm+(1608+w/2));
+        if(lx > 358&& xm<2) {
+            count ++;
+        }
+        else if(lx < 2&& xm>358) {
+            count --;
+        }
+        lx = xm;
         z = Math.round(3*h/180*Math.round(eventData.beta*10)/10+h);
-        y = 0;
+        y = Math.round(6*h/180*Math.round(eventData.gamma*10)/10);
+        x = count*3216+x;
         if(z>643&&z<=1608) {
             $(".background").css({
                 "background-position":x+y+"px "+z+"px"
