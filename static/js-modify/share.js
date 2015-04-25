@@ -1,5 +1,5 @@
 $(function(){
-    $.post("/nabob/wxconfig/",{
+    $.post("/blow/wxconfig/",{
 		"url":location.href
 	},function(data){
 		wx.config(data);
@@ -17,8 +17,8 @@ $(function(){
 			});
         });
 		wx.error(function(res){
-			$.get("/nabob/update_access_token/",function(data){
-				$.post("/wxconfig/",{
+			$.get("/blow/update_access_token/",function(data){
+				$.post("/blow/wxconfig/",{
 					"url":location.href
 				},function(data){
 					wx.config(data);
