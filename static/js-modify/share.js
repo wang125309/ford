@@ -4,7 +4,6 @@ $(function(){
 	},function(data){
 		wx.config(data);
 		wx.ready(function(){
-            wx.hideOptionMenu();
 			wx.onMenuShareTimeline({
                 link:"http://www.360youtu.com/ford/template/index.html",
                 imgUrl:"http://www.360youtu.com/ford/static/image/share-background.jpg",
