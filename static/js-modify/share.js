@@ -7,12 +7,12 @@ $(function(){
             wx.hideOptionMenu();
 			wx.onMenuShareTimeline({
                 link:"http://www.360youtu.com/ford/template/index.html",
-                imgUrl:"http://www.360youtu.com/nabob/static/image/share.jpg",
+                imgUrl:"http://www.360youtu.com/ford/static/image/share-background.jpg",
                 title:"锐界人生 不止于超越",
 			});
 			wx.onMenuShareAppMessage({
                 link:"http://www.360youtu.com/ford/template/index.html",
-                imgUrl:"http://www.360youtu.com/nabob/static/image/share.jpg",
+                imgUrl:"http://www.360youtu.com/ford/static/image/share-background.jpg",
                 title:"锐界人生 不止于超越",
 			});
         });
@@ -25,12 +25,12 @@ $(function(){
 					wx.ready(function(){
 		            	wx.onMenuShareTimeline({
                             link:"http://www.360youtu.com/ford/template/index.html",
-                            imgUrl:"http://www.360youtu.com/nabob/static/image/share.jpg",
+                            imgUrl:"http://www.360youtu.com/ford/static/image/share-background.jpg",
                             title:"锐界人生 不止于超越",
 			            });
 			            wx.onMenuShareAppMessage({
                             link:"http://www.360youtu.com/ford/template/index.html",
-                            imgUrl:"http://www.360youtu.com/nabob/static/image/share.jpg",
+                            imgUrl:"http://www.360youtu.com/ford/static/image/share-background.jpg",
                             title:"锐界人生 不止于超越",
 			            });
                     });

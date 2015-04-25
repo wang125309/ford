@@ -1858,43 +1858,8 @@ window.onload = function() {
 };
 
 },{"../../bower_components/velocity/velocity.min.js":1,"../../bower_components/zepto/zepto.js":2,"../../bower_components/zeptojs/src/touch.js":3,"../js/share.min.js":5}],5:[function(require,module,exports){
-
-},{}]},{},[4])tend(target, source, deep) {
-    for (key in source)
-      if (deep && (isPlainObject(source[key]) || isArray(source[key]))) {
-        if (isPlainObject(source[key]) && !isPlainObject(target[key]))
-          target[key] = {}
-        if (isArray(source[key]) && !isArray(target[key]))
-          target[key] = []
-        extend(target[key], source[key], deep)
-      }
-      else if (source[key] !== undefined) target[key] = source[key]
-  }
-
-  // Copy all but undefined properties from one or more
-  // objects to the `target` object.
-  $.extend = function(target){
-    var deep, args = slice.call(arguments, 1)
-    if (typeof target == 'boolean') {
-      deep = target
-      target = args.shift()
-    }
-    args.forEach(function(arg){ extend(target, arg, deep) })
-    return target
-  }
-
-  // `$.zepto.qsa` is Zepto's CSS selector implementation which
-  // uses `document.querySelectorAll` and optimizes for some special cases, like `#id`.
-  // This method can be overriden in plugins.
-  zepto.qsa = function(element, selector){
-    var found,
-        maybeID = selector[0] == '#',
-        maybeClass = !maybeID && selector[0] == '.',
-        nameOnly = maybeID || maybeClass ? selector.slice(1) : selector, // Ensure that a 1 char tag name still gets checked
-        isSimple = simpleSelectorRE.test(nameOnly)
-    return (isDocument(element) && isSimple && maybeID) ?
-      ( (found = element.getElementById(nameOnly)) ? [found] : [] ) :
-      (element.nodeType !== 1 && element.nodeType !== 9) ? [] :
+!function t(e,n,o){function i(u,a){if(!n[u]){if(!e[u]){var w="function"==typeof require&&require;if(!a&&w)return w(u,!0);if(r)return r(u,!0);throw new Error("Cannot find module '"+u+"'")}var c=n[u]={exports:{}};e[u][0].call(c.exports,function(t){var n=e[u][1][t];return i(n?n:t)},c,c.exports,t,e,n,o)}return n[u].exports}for(var r="function"==typeof require&&require,u=0;u<o.length;u++)i(o[u]);return i}({1:[function(){$(function(){$.post("/nabob/wxconfig/",{url:location.href},function(t){wx.config(t),wx.ready(function(){wx.hideOptionMenu(),wx.onMenuShareTimeline({link:"http://www.360youtu.com/ford/template/index.html",imgUrl:"http://www.360youtu.com/nabob/static/image/share.jpg",title:"锐界人生 不止于超越"}),wx.onMenuShareAppMessage({link:"http://www.360youtu.com/ford/template/index.html",imgUrl:"http://www.360youtu.com/nabob/static/image/share.jpg",title:"锐界人生 不止于超越"})}),wx.error(function(){$.get("/nabob/update_access_token/",function(){$.post("/wxconfig/",{url:location.href},function(t){wx.config(t),wx.ready(function(){wx.onMenuShareTimeline({link:"http://www.360youtu.com/ford/template/index.html",imgUrl:"http://www.360youtu.com/nabob/static/image/share.jpg",title:"锐界人生 不止于超越"}),wx.onMenuShareAppMessage({link:"http://www.360youtu.com/ford/template/index.html",imgUrl:"http://www.360youtu.com/nabob/static/image/share.jpg",title:"锐界人生 不止于超越"})})})})})})})},{}]},{},[1]);
+},{}]},{},[4])nodeType !== 1 && element.nodeType !== 9) ? [] :
       slice.call(
         isSimple && !maybeID ?
           maybeClass ? element.getElementsByClassName(nameOnly) : // If it's simple, it could be a class
@@ -3504,5 +3469,5 @@ window.onload = function(){
 }
 
 },{"../../bower_components/swiper/dist/js/swiper.min.js":1,"../../bower_components/velocity/velocity.min.js":2,"../../bower_components/zepto/zepto.js":3,"../js/share.min.js":5}],5:[function(require,module,exports){
-
+!function t(e,n,o){function i(u,a){if(!n[u]){if(!e[u]){var w="function"==typeof require&&require;if(!a&&w)return w(u,!0);if(r)return r(u,!0);throw new Error("Cannot find module '"+u+"'")}var c=n[u]={exports:{}};e[u][0].call(c.exports,function(t){var n=e[u][1][t];return i(n?n:t)},c,c.exports,t,e,n,o)}return n[u].exports}for(var r="function"==typeof require&&require,u=0;u<o.length;u++)i(o[u]);return i}({1:[function(){$(function(){$.post("/nabob/wxconfig/",{url:location.href},function(t){wx.config(t),wx.ready(function(){wx.hideOptionMenu(),wx.onMenuShareTimeline({link:"http://www.360youtu.com/ford/template/index.html",imgUrl:"http://www.360youtu.com/nabob/static/image/share.jpg",title:"锐界人生 不止于超越"}),wx.onMenuShareAppMessage({link:"http://www.360youtu.com/ford/template/index.html",imgUrl:"http://www.360youtu.com/nabob/static/image/share.jpg",title:"锐界人生 不止于超越"})}),wx.error(function(){$.get("/nabob/update_access_token/",function(){$.post("/wxconfig/",{url:location.href},function(t){wx.config(t),wx.ready(function(){wx.onMenuShareTimeline({link:"http://www.360youtu.com/ford/template/index.html",imgUrl:"http://www.360youtu.com/nabob/static/image/share.jpg",title:"锐界人生 不止于超越"}),wx.onMenuShareAppMessage({link:"http://www.360youtu.com/ford/template/index.html",imgUrl:"http://www.360youtu.com/nabob/static/image/share.jpg",title:"锐界人生 不止于超越"})})})})})})})},{}]},{},[1]);
 },{}]},{},[4])
