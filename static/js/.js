@@ -3245,10 +3245,12 @@ window.onload = function(){
         if(on) {
             on = false;
             document.getElementById("audio").pause();
+            $(".music").removeClass("music-play");
         }
         else {
             on = true;
             document.getElementById("audio").play();
+            $(".music").addClass("music-play");
         }
     });
     $(".go360").click(function(){
