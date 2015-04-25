@@ -1,6 +1,7 @@
 require("../../bower_components/zepto/zepto.js");
 require("../../bower_components/zeptojs/src/touch.js");
 require("../../bower_components/velocity/velocity.min.js");
+require("../js/share.min.js");
 
 window.onload = function() {
     $("#loading").velocity("fadeOut");

@@ -1764,6 +1764,7 @@ window.$ === undefined && (window.$ = Zepto)
 require("../../bower_components/zepto/zepto.js");
 require("../../bower_components/zeptojs/src/touch.js");
 require("../../bower_components/velocity/velocity.min.js");
+require("../js/share.min.js");
 
 window.onload = function() {
     $("#loading").velocity("fadeOut");
@@ -1856,12 +1857,9 @@ window.onload = function() {
     }
 };
 
-},{"../../bower_components/velocity/velocity.min.js":1,"../../bower_components/zepto/zepto.js":2,"../../bower_components/zeptojs/src/touch.js":3}]},{},[4])ns.
-  $ = function(selector, context){
-    return zepto.init(selector, context)
-  }
+},{"../../bower_components/velocity/velocity.min.js":1,"../../bower_components/zepto/zepto.js":2,"../../bower_components/zeptojs/src/touch.js":3,"../js/share.min.js":5}],5:[function(require,module,exports){
 
-  function extend(target, source, deep) {
+},{}]},{},[4])tend(target, source, deep) {
     for (key in source)
       if (deep && (isPlainObject(source[key]) || isArray(source[key]))) {
         if (isPlainObject(source[key]) && !isPlainObject(target[key]))
@@ -3234,7 +3232,7 @@ window.$ === undefined && (window.$ = Zepto)
 require("../../bower_components/zepto/zepto.js");
 require("../../bower_components/velocity/velocity.min.js");
 require("../../bower_components/swiper/dist/js/swiper.min.js");
-
+require("../js/share.min.js");
 window.onload = function(){
     $("#loading").velocity("fadeOut");
     w = $(window).width();
@@ -3505,4 +3503,6 @@ window.onload = function(){
     });
 }
 
-},{"../../bower_components/swiper/dist/js/swiper.min.js":1,"../../bower_components/velocity/velocity.min.js":2,"../../bower_components/zepto/zepto.js":3}]},{},[4])
+},{"../../bower_components/swiper/dist/js/swiper.min.js":1,"../../bower_components/velocity/velocity.min.js":2,"../../bower_components/zepto/zepto.js":3,"../js/share.min.js":5}],5:[function(require,module,exports){
+
+},{}]},{},[4])
